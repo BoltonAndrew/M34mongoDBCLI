@@ -13,6 +13,12 @@ const app = async (yargsObj) => {
       const movie = new Movie(yargsObj.title, yargsObj.actor);
       console.log(await movie.list(collection));
       //list all movies in database
+    } else if (yargsObj.update) {
+      const movie = new Movie(yargsObj.title, yargsObj.actor);
+      console.log(await movie.update(collection));
+    } else if (yargsObj.delete) {
+      const movie = new Movie(yargsObj.title);
+      console.log(await movie.delete(collection));
     } else {
       console.log("Incorrect command");
     }
